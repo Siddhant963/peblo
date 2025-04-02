@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanlaxmi Exchange - India's Premier Sports Betting Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <style>
+        :root {
+            --primary: #06d6a0;
+            --secondary: #1a3a5f;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f8f9fa;
+            --accent: #ffd166;
+            --danger: #ef476f;
+            --success: #06d6a0;
+            --neon: #00f5d4;
+            --text: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+                .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 100px;
+            filter: brightness(0) invert(1) contrast(2) saturate(2); /* Makes it white, bold, and more vivid */
+            drop-shadow:(0 0 15px var(--neon)); /* Stronger neon glow */
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px var(--neon); /* Neon glow */
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--neon);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--darker);
+            z-index: 1000;
+            transition: right 0.3s ease;
+            padding: 5rem 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu .nav-links a {
+            color: var(--text);
+            font-size: 1.2rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu .nav-links a:hover {
+            color: var(--neon);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
+                url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn-lg {
+            padding: 0.8rem 1.8rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-accent {
+            background-color: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-accent:hover {
+            background-color: #ffc233;
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            background-color: var(--darker);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--neon);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--neon);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .feature-card p {
+            color: #aaa;
+        }
+
+        /* Sports Section */
+        .sports {
+            padding: 4rem 2rem;
+            background-color: var(--dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sport-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .sport-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+        }
+
+        .sport-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .sport-info {
+            padding: 1.5rem;
+        }
+
+        .sport-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .sport-info p {
+            color: #aaa;
+            margin-bottom: 1rem;
+        }
+
+        .sport-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--primary);
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ID Section */
+        .id-section {
+            padding: 4rem 2rem;
+            background-color: var(--darker);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .id-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .id-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .id-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+        }
+
+        .id-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--neon);
+        }
+
+        .id-card p {
+            color: #aaa;
+            margin-bottom: 1.5rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 2rem;
+            background-color: var(--dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .step p {
+            color: #aaa;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+        }
+
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            color: var(--text);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .rating {
+            color: var(--accent);
+            margin-top: 0.3rem;
+        }
+
+        /* Partners Section */
+        .partners {
+            padding: 4rem 2rem;
+            background-color: var(--dark);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .partner-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+        }
+
+        .partner-card img {
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(100%) brightness(1.5);
+            transition: filter 0.3s ease;
+        }
+
+        .partner-card:hover img {
+            filter: grayscale(0%) brightness(1);
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 4rem 2rem;
+            background-color: var(--darker);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .owl-carousel .item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 0 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .owl-carousel .item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+        }
+
+        .carousel-icon {
+            font-size: 3rem;
+            color: var(--neon);
+            margin-bottom: 1.5rem;
+        }
+
+        .carousel-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .carousel-item p {
+            color: #aaa;
+        }
+
+        .owl-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .owl-prev,
+        .owl-next {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: var(--text) !important;
+            width: 40px;
+            height: 40px;
+            border-radius: 50% !important;
+            margin: 0 0.5rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .owl-prev:hover,
+        .owl-next:hover {
+            background-color: var(--neon) !important;
+            color: var(--dark) !important;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        
+        .footer-logo img {
+            height: 100px;
+            filter: brightness(0) invert(1) contrast(2) saturate(2); /* Makes it white, bold, and more vivid */
+            drop-shadow:(0 0 15px var(--neon)); /* Stronger neon glow */
+        }
+
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px var(--neon); /* Neon glow */
+        }
+
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--neon);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--neon);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--neon);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .steps::before {
+                display: none;
+            }
+
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .step {
+                max-width: 350px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-lg {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .id-container {
+                flex-direction: column;
+            }
+
+            .id-card {
+                min-width: 100%;
+            }
+
+            /* Features Grid */
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            .feature-card {
+                padding: 1.5rem;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3rem;
+            }
+
+            .feature-card p {
+                font-size: 0.95rem;
+            }
+
+            /* Sports Grid */
+            .sports-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+                gap: 1.5rem;
+            }
+
+            .sport-card {
+                margin-bottom: 1.5rem;
+            }
+
+            /* General padding adjustment */
+            .features,
+            .sports,
+            .testimonials,
+            .how-it-works,
+            .cta,
+            .partners,
+            .carousel-section {
+                padding: 2rem 1rem;
+            }
+
+            /* Section title adjustment */
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            /* Carousel adjustments */
+            .owl-carousel .item {
+                margin: 0 0.5rem;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            /* Extra small devices */
+            .feature-card {
+                padding: 1.2rem;
+            }
+
+            .feature-icon {
+                font-size: 1.8rem;
+            }
+
+            .feature-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img  src="https://media-hosting.imagekit.io/28a34471863442c4/Untitled_design__2_-removebg-preview.png?Expires=1838202705&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Hd8agDzhjjE2JfSft50Abjga~~7m5qr6eH9CbDYIdNmpPf5YyvhS-HjThR23EYiZvvpKrsx0HhTpLEHirNGeoUnEfTlRdYejpxP6MeuQZfuQkHqphBOZzIMSzDyfMXn4iQZPmZE5X6vHOTP58Ig7XMt~-wgtRGiDJrAD1K3u~0tEokXAgvH4TnsWiwj9ZhPVzM~wvRkHnT6GLAfdtpXgCb9~jk9mIK4VDIOEUjLIRKp6tlfu4JTTSI4NLYkQXxTTAWesAjkBjvXkFUvXsNUo-g5jwLo9~InTL6QQARYA9YG33EFtK0VlHOhATk~rAWQ29XjL8Ny~9SJhIzEUV-BLIg__" alt="Dhanlaxmi Exchange Logo">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="./pablo.html">Home</a></li>
+                <!-- <li><a href="#">Sports</a></li>
+                <li><a href="#">Live Betting</a></li>
+                <li><a href="#">Casino</a></li>
+                <li><a href="#">Promotions</a></li> -->
+                <li><a href="https://aboutusofdhan.ccbp.tech/">About Us</a></li>
+            </ul>
+
+            <button class="menu-toggle" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <!-- <li><a href="#">Sports</a></li>
+            <li><a href="#">Live Betting</a></li>
+            <li><a href="#">Casino</a></li>
+            <li><a href="#">Promotions</a></li> -->
+            <li><a href="https://aboutusofdhan.ccbp.tech/">About Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>India's Most Trusted Betting Platform</h1>
+            <p>Join over 1 million users who trust Dhanlaxmi Exchange for the best odds, fastest payouts, and most exciting betting experience</p>
+
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-lg" onclick="redirectToWhatsApp()">Get Started</button>
+                <button class="btn btn-accent btn-lg">Live Matches</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-title">
+            <h2>Why Choose Dhanlaxmi Exchange?</h2>
+            <p>We offer the best betting experience with these amazing features</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Instant Withdrawals</h3>
+                <p>Get your winnings in minutes with our lightning-fast withdrawal system</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>100% Secure</h3>
+                <p>Your data and transactions are protected with bank-level security</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-rupee-sign"></i>
+                </div>
+                <h3>Best Odds</h3>
+                <p>We offer the most competitive odds in the market across all sports</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Our expert support team is available round the clock to assist you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Section -->
+    <section class="sports">
+        <div class="section-title">
+            <h2>Popular Games</h2>
+            <p>Bet on your favorite games with amazing odds and markets</p>
+        </div>
+
+        <div class="sports-grid">
+            <div class="sport-card">
+                <img src="https://www.grownxtdigital.in/wp-content/uploads/2024/04/cricket-betting-mistakes-avoid-common-pitfalls-steer-clear.webp" alt="Cricket">
+                <div class="sport-badge">Live</div>
+                <div class="sport-info">
+                    <h3>IPL Cricket</h3>
+                    <p>Indian Premier League with live betting options</p>
+                    <button class="btn btn-primary">Bet Now</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="https://png.pngtree.com/template/20220407/ourmid/pngtree-betting-sports-poster-sport-gambling-image_962805.jpg" alt="Football">
+                <div class="sport-info">
+                    <h3>Football</h3>
+                    <p>Premier League, Champions League, World Cup</p>
+                    <button class="btn btn-primary">Bet Now</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="https://www.pokerbaazi.com/_next/image?url=https%3A%2F%2Fweb.pokerbaazicdn.com%2Fasset%2Fimages%2Fseobanner%2Fteen-patti-sequence.webp&w=3840&q=75" alt="Teen Patti">
+                <div class="sport-badge">Hot</div>
+                <div class="sport-info">
+                    <h3>Teen Patti</h3>
+                    <p>Classic Indian card game with live dealers</p>
+                    <button class="btn btn-primary">Play Now</button>
+                </div>
+            </div>
+
+            <div class="sport-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4mdUK-28_pgY4vMGLlamJpPXj7cy_e6Y1sA&s" alt="Dragon Tiger">
+                <div class="sport-info">
+                    <h3>Dragon Tiger</h3>
+                    <p>Fast-paced Asian card game with high payouts</p>
+                    <button class="btn btn-primary">Play Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ID Section -->
+    <section class="id-section">
+        <div class="section-title">
+            <h2>Get Your ID Now</h2>
+            <p>Choose between our demo or real ID to start playing</p>
+        </div>
+
+        <div class="id-container">
+            <div class="id-card">
+                <h3>Demo ID</h3>
+                <p>Try our platform risk-free with virtual credits</p>
+                <button class="btn btn-primary" onclick="redirectToWhatsApp()">Get Demo ID</button></a>
+            </div>
+
+            <div class="id-card">
+                <h3>Real ID</h3>
+                <p>Start playing with real money and win big</p>
+                <button class="btn btn-primary">Get Real ID</button>
+            </div>
+        </div>
+    </section>
+    <script>
+        function redirectToWhatsApp() {
+            const phoneNumber = "+918878841005"; // Replace with your WhatsApp number (including country code)
+            const message = encodeURIComponent("Hello, I want to get a Demo ID."); // Custom message
+            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        }
+    </script>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Explore the wide range of betting options we offer</p>
+        </div>
+
+        <div class="services-carousel owl-carousel owl-theme">
+            <div class="item">
+                <div class="carousel-icon">
+                    <!--                     <i class="fas fa-cricket"></i>
+ -->
+                    <p style="font-size:60px" class="fas">&#9917;</p>
+
+                </div>
+                <h3>Cricket Betting</h3>
+                <p>Bet on IPL, World Cup, and international matches with live odds</p>
+            </div>
+            <div class="item">
+                <div class="carousel-icon">
+                    <i class="fas fa-crown" style="font-size: 60px; color: #00f5d4;"></i>
+
+                </div>
+                <h3>Casino Games</h3>
+                <p>Play Teen Patti, Andar Bahar, Roulette and more with live dealers</p>
+            </div>
+            <div class="item">
+                <div class="carousel-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <h3>Sports Betting</h3>
+                <p>Football, Tennis, Basketball and many more sports available</p>
+            </div>
+            <div class="item">
+                <div class="carousel-icon">
+                    <i class="fas fa-dice"></i>
+                </div>
+                <h3>Live Casino</h3>
+                <p>Experience the thrill of real casino games from your home</p>
+            </div>
+            <div class="item">
+                <div class="carousel-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Fast Payouts</h3>
+                <p>Get your winnings instantly with our quick withdrawal system</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="section-title">
+            <h2>Our Partners</h2>
+            <p>Trusted by leading brands in the industry</p>
+        </div>
+
+        <div class="partners-grid">
+            <div class="partner-card">
+                <img src="https://www.daddyonlinebook.net/images/logo1.png" alt="Partner 1">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.daddyonlinebook.net/images/logo2.png" alt="Partner 2">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.daddyonlinebook.net/images/logo3.png" alt="Partner 3">
+            </div>
+            <div class="partner-card">
+                <img src="https://www.daddyonlinebook.net/images/logo4.png" alt="Partner 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <p>Get started with Dhanlaxmi Exchange in just 3 simple steps</p>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Create Account</h3>
+                <p>Sign up in less than a minute with your basic details</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Deposit Funds</h3>
+                <p>Add money to your account using any payment method</p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Start Betting</h3>
+                <p>Choose your sport, pick your odds and place your bet</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <h2>Ready to Start Betting?</h2>
+        <p>Join Dhanlaxmi Exchange today and get a 100% bonus on your first deposit up to ₹10,000</p>
+        <button class="btn btn-primary btn-lg" onclick="redirectToWhatsApp()">Get Started Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo ">
+                    <a href="./pablo.html" style="text-decoration:none;">
+                       
+                            <img  src="https://media-hosting.imagekit.io/28a34471863442c4/Untitled_design__2_-removebg-preview.png?Expires=1838202705&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Hd8agDzhjjE2JfSft50Abjga~~7m5qr6eH9CbDYIdNmpPf5YyvhS-HjThR23EYiZvvpKrsx0HhTpLEHirNGeoUnEfTlRdYejpxP6MeuQZfuQkHqphBOZzIMSzDyfMXn4iQZPmZE5X6vHOTP58Ig7XMt~-wgtRGiDJrAD1K3u~0tEokXAgvH4TnsWiwj9ZhPVzM~wvRkHnT6GLAfdtpXgCb9~jk9mIK4VDIOEUjLIRKp6tlfu4JTTSI4NLYkQXxTTAWesAjkBjvXkFUvXsNUo-g5jwLo9~InTL6QQARYA9YG33EFtK0VlHOhATk~rAWQ29XjL8Ny~9SJhIzEUV-BLIg__" alt="Dhanlaxmi Exchange Logo">
+                        
+            
+                    </a>
+                </div>
+                <p>Dhanlaxmi Exchange is India's most trusted sports betting platform, offering the best odds, fastest payouts, and most exciting betting experience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://wa.me/971581725968" ><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Sports Betting</a></li>
+                    <!-- <li><a href="#">Live Betting</a></li>
+                    <li><a href="#">Casino</a></li>
+                    <li><a href="#">Promotions</a></li> -->
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <!-- <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li> -->
+                    <li><a href="#">Responsible Gaming</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fab fa-whatsapp"></i> +971 58 172 5968</p>
+                <p><i class="fas fa-phone-alt"></i> +918358081004</p>
+                <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dhanlaxmi Exchange. All Rights Reserved. | 18+ Only</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/971581725968" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+
+            // Toggle icon
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        closeMenu.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.mobile-menu .nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Initialize Owl Carousel
+        $(document).ready(function() {
+            $(".services-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on Scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll(
+                '.feature-card, .sport-card, .id-card, .partner-card, .step, .item'
+            );
+
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize elements with opacity 0 for animation
+        document.querySelectorAll(
+            '.feature-card, .sport-card, .id-card, .partner-card, .step, .item'
+        ).forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+
+        // Set up scroll event listener
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Trigger initial check
+        animateOnScroll();
+    </script>
+</body>
+
+</html>

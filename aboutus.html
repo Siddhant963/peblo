@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dhanlaxmi Exchange - Trusted Online Betting Platform</title>
+    <meta name="description" content="Learn about Dhanlaxmi Exchange, India's trusted online betting platform since 2023. Our mission, vision, leadership team and why players choose us.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #06d6a0;
+            --secondary: #1a3a5f;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #f8f9fa;
+            --accent: #ffd166;
+            --danger: #ef476f;
+            --success: #06d6a0;
+            --neon: #00f5d4;
+            --text: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 100px;
+            filter: brightness(0) invert(1) contrast(2) saturate(2); /* Makes it white, bold, and more vivid */
+            drop-shadow:(0 0 15px var(--neon)); /* Stronger neon glow */
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px var(--neon); /* Neon glow */
+        }
+
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        .nav-links a:hover {
+            color: var(--neon);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--neon);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(6, 214, 160, 0.3);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            background-color: var(--darker);
+            z-index: 1000;
+            transition: right 0.3s ease;
+            padding: 5rem 2rem;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .mobile-menu .nav-links a {
+            color: var(--text);
+            font-size: 1.2rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu .nav-links a:hover {
+            color: var(--neon);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+        }
+
+        /* About Us Page Styles */
+        .about-us {
+            background-color: var(--dark);
+            color: var(--text);
+        }
+
+        .about-hero {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)),
+                url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .about-hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .about-section {
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark-bg {
+            background-color: var(--darker);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--neon);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--neon);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .about-content.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: #aaa;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.02);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .mission-cards {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .mission-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2.5rem;
+            text-align: center;
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .mission-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+            background-color: rgba(0, 245, 212, 0.05);
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            color: var(--neon);
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .mission-card p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .feature-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+            background-color: rgba(0, 245, 212, 0.05);
+        }
+
+        .feature-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item h3 {
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            color: var(--text);
+        }
+
+        .feature-item p {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            width: 280px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .team-member.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 245, 212, 0.1);
+            border-color: rgba(0, 245, 212, 0.3);
+            background-color: rgba(0, 245, 212, 0.05);
+        }
+
+        .member-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1.5rem;
+            border: 3px solid var(--neon);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .member-image {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .team-member p {
+            color: var(--neon);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--neon);
+            background-color: rgba(0, 245, 212, 0.2);
+        }
+
+        .about-cta {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            padding: 5rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 245, 212, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+            z-index: 1;
+        }
+
+        .about-cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .about-cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        
+        .footer-logo img {
+            height: 100px;
+            filter: brightness(0) invert(1) contrast(2) saturate(2); /* Makes it white, bold, and more vivid */
+            drop-shadow:(0 0 15px var(--neon)); /* Stronger neon glow */
+        }
+
+        .footer-logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 10px var(--neon); /* Neon glow */
+        }
+        .footer-about p {
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--neon);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--neon);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero p {
+                font-size: 1.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .mission-card {
+                min-width: 100%;
+            }
+
+            .about-cta h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero {
+                padding: 6rem 1rem;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-section {
+                padding: 3rem 1rem;
+            }
+
+            .mission-card,
+            .feature-item {
+                padding: 1.5rem;
+            }
+
+            .about-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .about-cta p {
+                font-size: 1rem;
+            }
+
+            .btn-lg {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="./pablo.html" style="text-decoration:none;">
+                   
+                        <img  src="https://media-hosting.imagekit.io/28a34471863442c4/Untitled_design__2_-removebg-preview.png?Expires=1838202705&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Hd8agDzhjjE2JfSft50Abjga~~7m5qr6eH9CbDYIdNmpPf5YyvhS-HjThR23EYiZvvpKrsx0HhTpLEHirNGeoUnEfTlRdYejpxP6MeuQZfuQkHqphBOZzIMSzDyfMXn4iQZPmZE5X6vHOTP58Ig7XMt~-wgtRGiDJrAD1K3u~0tEokXAgvH4TnsWiwj9ZhPVzM~wvRkHnT6GLAfdtpXgCb9~jk9mIK4VDIOEUjLIRKp6tlfu4JTTSI4NLYkQXxTTAWesAjkBjvXkFUvXsNUo-g5jwLo9~InTL6QQARYA9YG33EFtK0VlHOhATk~rAWQ29XjL8Ny~9SJhIzEUV-BLIg__" alt="Dhanlaxmi Exchange Logo">
+                    
+        
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="./pablo.html">Home</a></li>
+                <!-- <li><a href="#">Sports</a></li>
+                <li><a href="#">Live Betting</a></li>
+                <li><a href="#">Casino</a></li>
+                <li><a href="#">Promotions</a></li> -->
+                <li><a href="./aboutus.html">About Us</a></li>
+            </ul>
+
+
+
+            <button class="menu-toggle" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="./pablo.html">Home</a></li>
+            <!-- <li><a href="#">Sports</a></li>
+            <li><a href="#">Live Betting</a></li>
+            <li><a href="#">Casino</a></li>
+            <li><a href="#">Promotions</a></li> -->
+            <li><a href="./aboutus.html">About Us</a></li>
+        </ul>
+
+    </div>
+
+    <!-- About Us Page -->
+    <section class="about-us">
+        <!-- Hero Section -->
+        <div class="about-hero">
+            <div class="container">
+                <h1>About Dhanlaxmi Exchange</h1>
+                <p>Your trusted partner in online betting and gaming since 2023</p>
+            </div>
+        </div>
+
+        <!-- Our Story Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Story</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Founded in 2023, Dhanlaxmi Exchange has rapidly grown to become one of India's most trusted online betting platforms. What began as a small startup with a vision to revolutionize the betting industry has now transformed into a platform serving millions of users across the country.</p>
+                        <p>Our journey has been fueled by innovation, customer trust, and an unwavering commitment to providing the best betting experience in the market. We combine cutting-edge technology with deep industry expertise to deliver a seamless and secure betting environment.</p>
+                        <p>From our humble beginnings to becoming a market leader, we've remained focused on our core values of transparency, fairness, and customer satisfaction.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Our Story">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section class="about-section dark-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Mission & Vision</h2>
+                </div>
+                <div class="mission-cards">
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To provide a secure, fair, and entertaining betting experience with the best odds, fastest payouts, and 24/7 customer support. We're committed to responsible gaming and maintaining the highest standards of integrity.</p>
+                    </div>
+                    <div class="mission-card">
+                        <div class="mission-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Our Vision</h3>
+                        <p>To become India's most trusted betting platform by maintaining transparency, innovation, and customer satisfaction at our core. We aim to redefine the betting experience through technology and exceptional service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="about-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Dhanlaxmi Exchange?</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-number">01</div>
+                        <h3>Trusted Platform</h3>
+                        <p>Licensed and regulated with over 1 million satisfied users. Our security protocols ensure your data and funds are always protected.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">02</div>
+                        <h3>Best Odds</h3>
+                        <p>We offer the most competitive odds across all sports and games, giving you the highest potential returns on your bets.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">03</div>
+                        <h3>Instant Withdrawals</h3>
+                        <p>Get your winnings in minutes, not days. Our streamlined withdrawal process ensures quick access to your funds.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-number">04</div>
+                        <h3>24/7 Support</h3>
+                        <p>Our expert team is always available to assist you via live chat, email, or phone in multiple Indian languages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <!-- <section class="about-section dark-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Leadership</h2>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Sharma - Founder & CEO">
+                        </div>
+                        <h3>Rajesh Sharma</h3>
+                        <p>Founder & CEO</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn profile of Rajesh Sharma"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter profile of Rajesh Sharma"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel - Chief Technology Officer">
+                        </div>
+                        <h3>Priya Patel</h3>
+                        <p>Chief Technology Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn profile of Priya Patel"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter profile of Priya Patel"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Arjun Mehta - Chief Operations Officer">
+                        </div>
+                        <h3>Arjun Mehta</h3>
+                        <p>Chief Operations Officer</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="LinkedIn profile of Arjun Mehta"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Twitter profile of Arjun Mehta"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- CTA Section -->
+        <section class="about-cta">
+            <div class="container">
+                <h2>Ready to Join Dhanlaxmi Exchange?</h2>
+                <button class="btn btn-primary btn-lg" onclick="redirectToWhatsApp()">Use Now</button>
+            </div>
+        </section>
+         <script>
+        function redirectToWhatsApp() {
+            const phoneNumber = "+919978841005"; // Replace with your WhatsApp number (including country code)
+            const message = encodeURIComponent("Hello, I want to get a Demo ID."); // Custom message
+            window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+        }
+    </script>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo ">
+                    <a href="./pablo.html" style="text-decoration:none;">
+                       
+                            <img  src="https://media-hosting.imagekit.io/28a34471863442c4/Untitled_design__2_-removebg-preview.png?Expires=1838202705&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Hd8agDzhjjE2JfSft50Abjga~~7m5qr6eH9CbDYIdNmpPf5YyvhS-HjThR23EYiZvvpKrsx0HhTpLEHirNGeoUnEfTlRdYejpxP6MeuQZfuQkHqphBOZzIMSzDyfMXn4iQZPmZE5X6vHOTP58Ig7XMt~-wgtRGiDJrAD1K3u~0tEokXAgvH4TnsWiwj9ZhPVzM~wvRkHnT6GLAfdtpXgCb9~jk9mIK4VDIOEUjLIRKp6tlfu4JTTSI4NLYkQXxTTAWesAjkBjvXkFUvXsNUo-g5jwLo9~InTL6QQARYA9YG33EFtK0VlHOhATk~rAWQ29XjL8Ny~9SJhIzEUV-BLIg__" alt="Dhanlaxmi Exchange Logo">
+                        
+            
+                    </a>
+                </div>
+                <p>Dhanlaxmi Exchange is India's most trusted sports betting platform, offering the best odds, fastest payouts, and most exciting betting experience.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://wa.me/971581725968" ><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/pablo.html">Home</a></li>
+                    <li><a href="#">Sports Betting</a></li>
+                    <!-- <li><a href="#">Live Betting</a></li>
+                    <li><a href="#">Casino</a></li>
+                    <li><a href="#">Promotions</a></li> -->
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="./aboutus.html">About Us</a></li>
+                    <!-- <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li> -->
+                    <li><a href="#">Responsible Gaming</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fab fa-whatsapp"></i> +971 58 172 5968</p>
+                <p><i class="fas fa-phone-alt"></i> +918358081004</p>
+                <p><i class="fas fa-map-marker-alt"></i> Dubai, UAE</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2023 Dhanlaxmi Exchange. All Rights Reserved. | 18+ Only</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/971581725968" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        menuToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+
+            // Toggle icon
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        closeMenu.addEventListener('click', function() {
+            mobileMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.querySelector('i').classList.remove('fa-times');
+            menuToggle.querySelector('i').classList.add('fa-bars');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.mobile-menu .nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Improved Animation on Scroll with Intersection Observer
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up Intersection Observer for smoother animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const animateOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements that should animate
+            const animatedElements = document.querySelectorAll(
+                '.about-content, .mission-card, .feature-item, .team-member'
+            );
+
+            animatedElements.forEach(element => {
+                animateOnScroll.observe(element);
+            });
+
+            // Add hover effect to buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.style.transform = 'translateY(-3px)';
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translateY(0)';
+                });
+            });
+        });
+
+        // Preload images for better performance
+        window.onload = function() {
+            const images = [
+                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80',
+                'https://randomuser.me/api/portraits/men/32.jpg',
+                'https://randomuser.me/api/portraits/women/44.jpg',
+                'https://randomuser.me/api/portraits/men/67.jpg'
+            ];
+
+            images.forEach(img => {
+                (new Image()).src = img;
+            });
+        };
+    </script>
+</body>
+
+</html>
